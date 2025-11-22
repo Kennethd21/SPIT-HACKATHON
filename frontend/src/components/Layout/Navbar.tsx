@@ -2,7 +2,7 @@
 
 import React, { useEffect, useState } from 'react';
 import { useTheme } from '@/contexts/ThemeContext';
-import { Moon, Sun, User, Bell, Menu } from 'lucide-react';
+import { Moon, Sun, User, Bell } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { fetchNotifications, markNotificationAsRead } from '@/mock/api';
 import { Notification } from '@/mock/data';
@@ -10,10 +10,9 @@ import { useNavigate } from 'react-router-dom';
 
 interface NavbarProps {
   title: string;
-  onMenuClick: () => void;
 }
 
-export default function Navbar({ title, onMenuClick }: NavbarProps) {
+export default function Navbar({ title }: NavbarProps) {
   const { theme, toggleTheme } = useTheme();
   const navigate = useNavigate();
   const [notifications, setNotifications] = useState<Notification[]>([]);
@@ -71,19 +70,7 @@ export default function Navbar({ title, onMenuClick }: NavbarProps) {
   return (
     <header className="bg-card border-b border-border sticky top-0 z-10">
       <div className="flex items-center justify-between px-8 py-4">
-        <div className="flex items-center gap-4">
-          {/* Menu Button */}
-          <Button
-            variant="outline"
-            size="icon"
-            onClick={onMenuClick}
-            className="rounded-lg"
-            title="Toggle Menu"
-          >
-            <Menu className="w-5 h-5" />
-          </Button>
-          <h2 className="text-2xl font-semibold text-foreground">{title}</h2>
-        </div>
+        <h2 className="text-2xl font-semibold text-foreground">{title}</h2>
         
         <div className="flex items-center gap-4">
           {/* Notifications Bell */}

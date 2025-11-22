@@ -74,6 +74,7 @@ export default function Dashboard() {
           title="Low Stock Items"
           value={stats.lowStockItems}
           icon={AlertTriangle}
+          className="border-l-4 border-l-yellow-500"
         />
         <KPICard
           title="Pending Receipts"
