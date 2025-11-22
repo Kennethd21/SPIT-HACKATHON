@@ -87,7 +87,7 @@ export default function Login() {
 
             <div className="flex items-center justify-between">
               <a href="#" className="text-sm text-primary hover:underline">
-                Forgot OTP?
+                Forgot Password?
               </a>
             </div>
 
